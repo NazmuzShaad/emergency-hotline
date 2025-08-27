@@ -32,7 +32,7 @@
         <div class="flex gap-5">
 
             <div class="flex gap-3 items-center justify-center px-7 py-3 rounded-full bg-[#41ff6b1a]">
-                 <p class="font-extrabold text-lg ">0</p>
+                 <p id="love-count" class="font-extrabold text-lg ">0</p>
                    <img src="./assets/heart.png" alt="" class="w-8">
             </div>
 
@@ -59,6 +59,105 @@
     </div>
 </section>
 
+<!-- Cards Section -->
+ <section class="px-[60px] bg-[#F5FFF6] py-[48px]">
+    <div class="flex gap-[30px]">
+        <div class="card-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px] lg:w-3/4 md:w-2/3 w-full">
+           
+            <div class="p-8 rounded-2xl bg-white shadow ">
+                <div class="flex justify-between mb-5">
+                    <div class="p-4 rounded-2xl bg-[#FFE3E2]">
+                        <img src="./assets/emergency.png" alt="" class="w-8">
+                    </div>
+                    <img src="./assets/heart.svg" alt="" class="love-button">
+                </div>
+
+                <h3 class="text-2xl font-semibold">
+                    National Emergency Number
+                </h3>
+                <p class="text-[#5C5C5C] text-lg">
+                    National Emergency
+                </p>
+                <p class="text-4xl font-semibold mt-3">999</p>
+                <p class="text-[#5C5C5C] text-lg rounded-full bg-[#F2F2F2] py-[6px] px-4 inline-block mb-3">All</p>
+                <div class="grid grid-cols-2 gap-2  mt-3">
+                    <button class="btn btn-outline border-gray-300 text-[#5C5C5C] rounded-lg font-normal text-[17px]"><i class="fa-regular fa-copy"></i> Copy</button>
+                    <button class="btn bg-[#00A63E] text-white rounded-lg font-normal text-[17px] "> <img src="./assets/call.png" alt=""> Call</button>
+                </div>
+            </div>
+
+             <div class="p-8 rounded-2xl bg-white shadow ">
+                <div class="flex justify-between mb-5">
+                    <div class="p-4 rounded-2xl bg-[#DFEFFF]">
+                        <img src="./assets/police.png" alt="" class="w-8">
+                    </div>
+                    <img src="./assets/heart.svg" alt="" class="love-button">
+                </div>
+
+                <h3 class="text-2xl font-semibold">
+                    Police Helpline Number
+                </h3>
+                <p class="text-[#5C5C5C] text-lg">
+                    Police
+                </p>
+                <p class="text-4xl font-semibold mt-3">999</p>
+                <p class="text-[#5C5C5C] text-lg rounded-full bg-[#F2F2F2] py-[6px] px-4 inline-block mb-3">Plice</p>
+                <div class="grid grid-cols-2 gap-2  mt-3">
+                    <button class="btn btn-outline border-gray-300 text-[#5C5C5C] rounded-lg font-normal text-[17px]"><i class="fa-regular fa-copy"></i> Copy</button>
+                    <button class="btn bg-[#00A63E] text-white rounded-lg font-normal text-[17px] "> <img src="./assets/call.png" alt=""> Call</button>
+                </div>
+            </div>
+
+            <div class="p-8 rounded-2xl bg-white shadow ">
+                <div class="flex justify-between mb-5">
+                    <div class="p-4 rounded-2xl bg-[#FFE3E2]">
+                        <img src="./assets/fire-service.png" alt="" class="w-8">
+                    </div>
+                    <img src="./assets/heart.svg" alt="" class="love-button">
+                </div>
+
+                <h3 class="text-2xl font-semibold">
+                    Fire Service Number
+                </h3>
+                <p class="text-[#5C5C5C] text-lg">
+                    Fire Service
+                <p class="text-4xl font-semibold mt-3">999</p>
+                <p class="text-[#5C5C5C] text-lg rounded-full bg-[#F2F2F2] py-[6px] px-4 inline-block mb-3">Fire</p>
+                <div class="grid grid-cols-2 gap-2  mt-3">
+                    <button class="btn btn-outline border-gray-300 text-[#5C5C5C] rounded-lg font-normal text-[17px]"><i class="fa-regular fa-copy"></i> Copy</button>
+                    <button class="btn bg-[#00A63E] text-white rounded-lg font-normal text-[17px] "> <img src="./assets/call.png" alt=""> Call</button>
+                </div>
+            </div>
+            
+
+        </div>
+
+<!-- Side bar -->
+
+        <div class="p-8 rounded-2xl bg-white shadow lg:w-1/4 md:w-1/3 w-full">
+            <div class="flex justify-between items-center">
+                <p class="text-xl font-medium"><i class="fa-regular fa-clock"></i> Call History</p>
+                <button class="flex gap-3 items-center justify-center text-lg btn rounded-full w-[110px] h-[45px]  bg-[#00A63E] text-white font-medium">Clear</button>
+
+            </div>
+
+            <div class="flex flex-col gap-2 mt-4">
+                <div class="p-4 rounded-lg bg-[#FAFAFA] flex justify-between items-center">
+                    <div>
+                         <h5 class="text-lg font-semibold">Fire Service Number</h5>
+                         <p class="text-[#5C5C5C] text-lg">999</p>
+                    </div>
+                    <div class="text-lg">
+                        11:36:58 AM
+                    </div>
+                   
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+ </section>
 
 
 </main>
@@ -66,7 +165,22 @@
     
 
 
-    
+<script>
+const loveButtons = document.getElementsByClassName("love-button");
+let loveCountEl = document.getElementById('love-count');
+
+
+for(let loveButton of loveButtons){
+    loveButton.addEventListener('click',function(){
+        let loveCount = parseInt(loveCountEl.innerText) ;
+        loveCountEl.innerText= ++loveCount
+        
+    })
+}
+
+
+
+</script>
     
 </body>
 </html>
