@@ -27,6 +27,10 @@ function clickFunction(btnID , txtID){
     document.getElementById(btnID).addEventListener('click',function(){
     const copyText  = document.getElementById(txtID).innerText;
     navigator.clipboard.writeText(copyText);
+    alert(copyText + " " + "Copied to Clipboard📋")
+    let copyButtonEl=document.getElementById(btnID);
+    copyButtonEl.innerText = "Copied!";
+
 })
 }
 
@@ -74,14 +78,19 @@ function callFunction(callBtnId,serviceId,NumberId){
 })
 }
 
+// History Clear Button 
+document.getElementById('clear-button').addEventListener('click', function(){
+
+    callHistory.length = 0;
+    document.getElementById('history-container').innerHTML = "";
+    
+})
 
 
 
 // Button-1 
 clickFunction('copy-button-1','copy-text-1');
 callFunction('call-button-1','service-1','copy-text-1')
-
-
 
 // Button-2 
 clickFunction('copy-button-2','copy-text-2')
@@ -90,3 +99,28 @@ callFunction('call-button-2','service-2','copy-text-2')
 // Button-3 
 clickFunction('copy-button-3','copy-text-3')
 callFunction('call-button-3','service-3','copy-text-3')
+
+// Button-4 
+clickFunction('copy-button-4','copy-text-4')
+callFunction('call-button-4','service-4','copy-text-4')
+
+// Button-5 
+clickFunction('copy-button-5','copy-text-5')
+callFunction('call-button-5','service-5','copy-text-5')
+
+// Button-6 
+clickFunction('copy-button-6','copy-text-6')
+callFunction('call-button-6','service-6','copy-text-6')
+
+// Button-7 
+clickFunction('copy-button-7','copy-text-7')
+callFunction('call-button-7','service-7','copy-text-7')
+
+// Button-8
+clickFunction('copy-button-8','copy-text-8')
+callFunction('call-button-8','service-8','copy-text-8')
+
+// Button-9 
+clickFunction('copy-button-9','copy-text-9')
+callFunction('call-button-9','service-9','copy-text-9')
+
