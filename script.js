@@ -31,6 +31,7 @@ function clickFunction(btnID , txtID){
 }
 
 // Call Function 
+const callHistory=[];
 
 function callFunction(callBtnId,serviceId,NumberId){
     const service= document.getElementById(serviceId).innerText;
@@ -45,12 +46,33 @@ function callFunction(callBtnId,serviceId,NumberId){
     }
     alert("📞 Calling"+ " " + service + " " + number + "....")
     coinCountEl.innerText=coinCount-20 ;
+
+            // Call history Part 
+
+    let data={serviceName:service,    
+            number:number,  
+            time:new Date().toLocaleTimeString()}
+
+    callHistory.push(data);
+    
+    let historyContainer=document.getElementById('history-container');
+    let div= document.createElement('div');
+    div.innerHTML=`
+                    <div class="p-4 rounded-lg bg-[#FAFAFA] flex justify-between items-center">
+                    <div>
+                         <h5 class="text-lg font-semibold">${data.serviceName}</h5>
+                         <p class="text-[#5C5C5C] text-lg">${data.number}</p>
+                    </div>
+                    <div class="text-lg">
+                        ${data.time}
+                    </div>
+                   
+
+                </div>
+    `
+    historyContainer.appendChild(div);
 })
-
 }
-
-
-
 
 
 
