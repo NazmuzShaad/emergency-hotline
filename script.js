@@ -30,16 +30,41 @@ function clickFunction(btnID , txtID){
 })
 }
 
+// Call Function 
+
+function callFunction(callBtnId,serviceId,NumberId){
+    const service= document.getElementById(serviceId).innerText;
+    const number= document.getElementById(NumberId).innerText
+
+    document.getElementById(callBtnId).addEventListener('click',function(){
+    let coinCountEl=document.getElementById('coin-count')
+    let coinCount= parseInt(coinCountEl.innerText);
+    if(coinCount<20){
+        alert('You do not have enough coin');
+        return;
+    }
+    alert("📞 Calling"+ " " + service + " " + number + "....")
+    coinCountEl.innerText=coinCount-20 ;
+})
+
+}
+
+
+
+
+
+
 
 // Button-1 
 clickFunction('copy-button-1','copy-text-1');
-
+callFunction('call-button-1','service-1','copy-text-1')
 
 
 
 // Button-2 
 clickFunction('copy-button-2','copy-text-2')
-
+callFunction('call-button-2','service-2','copy-text-2')
 
 // Button-3 
 clickFunction('copy-button-3','copy-text-3')
+callFunction('call-button-3','service-3','copy-text-3')
